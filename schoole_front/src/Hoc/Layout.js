@@ -20,7 +20,7 @@ export default function Layout() {
       <NaveBar />
 
       <main>
-        hello
+        
         <Switch>{callForRouters()}</Switch>
       </main>
     </div>
