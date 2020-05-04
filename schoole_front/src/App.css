@@ -13,6 +13,7 @@
 .space-around {
   justify-content: space-between;
 }
+
 .center {
   align-content: center;
   align-items: center;
@@ -75,4 +76,16 @@ main {
 }
 .card-body {
   font-size: medium;
+}
+
+table {
+  border-collapse: collapse;
+  width: 75%;
+}
+
+td,
+th {
+  border: 1px solid;
+  text-align: center;
+  padding: 8px;
 }
