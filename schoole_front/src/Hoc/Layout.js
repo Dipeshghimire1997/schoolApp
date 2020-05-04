@@ -19,9 +19,9 @@ export default function Layout() {
     <div>
       <NaveBar />
 
-      <Container style={{ paddingTop: "4rem" }}>
+      <main>
         <Switch>{callForRouters()}</Switch>
-      </Container>
+      </main>
     </div>
   );
 }
