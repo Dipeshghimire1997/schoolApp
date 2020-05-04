@@ -31,18 +31,35 @@ export default function Adminission() {
             <label>Name of Pupil : </label>
             <input name="pupilName" type="text" />
           </div>
-          <div className="row ">
+          <div className="row space-around">
             <div>
               <label>Girl:</label>
               <input type="radio" name="gender" value="girl" />
             </div>
             <div>
+              {" "}
               <label>Boy:</label>{" "}
               <input type="radio" name="gender" value="boy" />
-              <div></div>
+            </div>
+            <div>
               <label>Other:</label>
               <input type="radio" name="gender" value="other" />
             </div>
+          </div>
+        </div>
+        <div className="row space-around">
+          <div>
+            <label>Date of Birth : </label> <input name="dob" type="date" />
+          </div>
+        </div>
+        <div className="row space-around">
+          <div>
+            <label>Place of Birth : </label>
+            <input name="placeOfBirth" type="text" />
+          </div>
+          <div>
+            <label>Nationality : </label>
+            <input name="nationality" type="text" />
           </div>
         </div>
       </form>
