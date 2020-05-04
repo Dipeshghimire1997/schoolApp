@@ -1,2 +1,3 @@
 import { combineReducers } from "redux";
-export default combineReducers({});
+import ImageDataStore from "./ImageDataStore";
+export default combineReducers({ ImageDataStore });

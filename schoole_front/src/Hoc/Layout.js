@@ -18,9 +18,7 @@ export default function Layout() {
   return (
     <div>
       <NaveBar />
-
       <main>
-        hello
         <Switch>{callForRouters()}</Switch>
       </main>
     </div>

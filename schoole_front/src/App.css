@@ -17,8 +17,62 @@
   align-content: center;
   align-items: center;
 }
+
 main {
   padding-top: 4rem;
   margin-right: 2rem;
   margin-left: 2rem;
+}
+.homePage {
+  margin: 0;
+  display: flex;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.img {
+  width: 100%;
+  height: 450px;
+  border-radius: 15px;
+  box-shadow: 2px 5px;
+}
+
+.basic-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: "";
+}
+
+.home-title {
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  font-size: 3rem;
+  text-align: center;
+  letter-spacing: 0.3ch;
+  margin-top: 2rem;
+}
+
+.cards {
+  display: grid;
+  gap: 1rem;
+  font-family: "Roboto Mono", monospace;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.card {
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 0 6px 20px 0 rgba(218, 214, 12, 0.555);
+}
+.card-title {
+  color: white;
+  background: #afad1a;
+  letter-spacing: 0.1cm;
+  font-weight: bolder;
+  font-size: larger;
+}
+.card-body {
+  font-size: medium;
 }
