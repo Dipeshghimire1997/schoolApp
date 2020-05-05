@@ -1,6 +1,46 @@
 .m-3r {
   margin: 3rem;
 }
+fieldset{
+  width: 100%;
+  border-radius:75%;
+  border-right:3px solid;
+  border-left:3px solid ;
+}
+
+
+
+input{
+  width:55%;
+  height: 65%;
+  margin-left:50px;
+  margin-top: 25px;
+  text-align: center;
+  border-radius: 25px;
+  border: 3px solid lightgrey;
+  color: #7D7769;
+  font-weight: bold;
+}
+
+
+
+button{
+  background: #fff;
+  border: 1px solid;
+  border-radius:10px ;
+  width: 25%;
+  height: 25%;
+  margin-left: 20px;
+  margin-top:15px;
+  color: #7D7769;
+  
+}
+button:hover{
+  background:#FBF7EF ;
+  border-radius: 20px;
+}
+
+
 
 .row {
   display: flex;
@@ -12,7 +52,7 @@
 }
 .space-around {
   justify-content: space-between;
-}
+} 
 
 .center {
   align-content: center;
@@ -89,3 +129,5 @@ th {
   text-align: center;
   padding: 8px;
 }
+
+
