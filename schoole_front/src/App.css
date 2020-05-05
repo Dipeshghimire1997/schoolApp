@@ -85,6 +85,7 @@ main {
   font-size: medium;
 }
 /* for application form pagess */
+
 .application-form-page {
   margin-bottom: 2rem;
   padding: 0;
@@ -98,4 +99,52 @@ main {
 .border-all {
   border: 1px solid black;
   margin-top: 1rem;
+}
+.g-row input[type="text"] {
+  width: 70%;
+  border: 0;
+  border-bottom: ridge;
+}
+/* contact page */
+.img-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 3rem;
+  margin-right: 3rem;
+}
+.img-container img {
+  width: 90%;
+  margin-right: 5rem;
+}
+.contact-container {
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+.contact-container .contact-info {
+  background: linear-gradient(to right, #b7f5bc, #70fd7c, #33fa44);
+  margin: 1rem;
+  border-radius: 15px;
+  cursor: pointer;
+  height: 13rem;
+  box-sizing: border-box;
+}
+.contact-container :hover {
+  background: #028513;
+  color: white;
+}
+.contact-title {
+  font-family: "Baloo Tamma 2", cursive;
+  font-size: larger;
+  font-weight: 900;
+  letter-spacing: 0.2ch;
+}
+.contact-body {
+  font-family: "Baloo Tamma 2", cursive;
+  letter-spacing: 0.1ch;
+  margin-left: 1rem;
+}
+.contact-body span {
+  font-weight: bolder;
 }

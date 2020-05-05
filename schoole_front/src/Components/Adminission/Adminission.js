@@ -4,17 +4,15 @@ let Adminission = (props) => {
   return (
     <div className="application-form-page ">
       {/* the header  */}
-      <div className="row space-around">
+      <div className="g-row space-around">
         <div>Logo</div>
         <div className="center">
           <h1>CHAMPS WORLD</h1>
           <div>Dallu , Chagal , Kathmandu</div>
           <div>9849180494/9808581308</div>
           <div>
-            FaceBook ID :
-            <a href="https://www.facebook.com/champswordl">
-              facebook.com/champswordl
-            </a>
+            or
+            <a href="https://www.facebook.com/champsworld1"> FaceBook</a>
           </div>
         </div>
         <div>Image</div>
@@ -103,8 +101,8 @@ let Adminission = (props) => {
                   <input name="fOccupation" type="text" />
                 </div>
                 <div>
-                  <label>Mobole No : </label>
-                  <input name="fMoboleNo" type="text" />
+                  <label>Mobile No : </label>
+                  <input name="fMobileNo" type="text" />
                 </div>
                 <div>
                   <label>Off. No : </label>
@@ -122,8 +120,8 @@ let Adminission = (props) => {
                   <input name="mOccupation" type="text" />
                 </div>
                 <div>
-                  <label>Mobole No : </label>
-                  <input name="mMoboleNo" type="text" />
+                  <label>Mobile No : </label>
+                  <input name="mMobileNo" type="text" />
                 </div>
                 <div>
                   <label>Off. No : </label>
@@ -190,10 +188,10 @@ let Adminission = (props) => {
                 <input type="text" name="place" />
               </div>
               <div>
-                <input type="checkbox" />
+                <input type="checkbox" className="w3-check" />
                 <label>
                   I declare that the details mentioned above about my child are
-                  true . I shall abide by the rule & refulations of the schoole
+                  true . I shall abide by the rule & regulations of the schoole
                 </label>
               </div>
               <div>
@@ -208,11 +206,3 @@ let Adminission = (props) => {
 };
 
 export default Adminission;
-{
-  /* <div className="g-row">
-          <div>
-            <label></label>
-            <input name = "" type =""/>
-          </div>
-        </div> */
-}
