@@ -1,31 +1,31 @@
 {
   "files": {
-    "main.css": "/schoolApp/static/css/main.a9f2d649.chunk.css",
-    "main.js": "/schoolApp/static/js/main.232986fb.chunk.js",
-    "main.js.map": "/schoolApp/static/js/main.232986fb.chunk.js.map",
-    "runtime-main.js": "/schoolApp/static/js/runtime-main.1834606d.js",
-    "runtime-main.js.map": "/schoolApp/static/js/runtime-main.1834606d.js.map",
-    "static/css/2.e3885d78.chunk.css": "/schoolApp/static/css/2.e3885d78.chunk.css",
-    "static/js/2.ebca1287.chunk.js": "/schoolApp/static/js/2.ebca1287.chunk.js",
-    "static/js/2.ebca1287.chunk.js.map": "/schoolApp/static/js/2.ebca1287.chunk.js.map",
-    "index.html": "/schoolApp/index.html",
-    "precache-manifest.897b556a9a0acbf674640200a639fece.js": "/schoolApp/precache-manifest.897b556a9a0acbf674640200a639fece.js",
-    "service-worker.js": "/schoolApp/service-worker.js",
-    "static/css/2.e3885d78.chunk.css.map": "/schoolApp/static/css/2.e3885d78.chunk.css.map",
-    "static/css/main.a9f2d649.chunk.css.map": "/schoolApp/static/css/main.a9f2d649.chunk.css.map",
-    "static/js/2.ebca1287.chunk.js.LICENSE.txt": "/schoolApp/static/js/2.ebca1287.chunk.js.LICENSE.txt",
-    "static/media/c1.jpg": "/schoolApp/static/media/c1.10e069e5.jpg",
-    "static/media/c3.jpg": "/schoolApp/static/media/c3.302d2cdf.jpg",
-    "static/media/c5.jpg": "/schoolApp/static/media/c5.14f219b7.jpg",
-    "static/media/c6.jpg": "/schoolApp/static/media/c6.16114559.jpg",
-    "static/media/c7.jpg": "/schoolApp/static/media/c7.ae11993a.jpg",
-    "static/media/undraw_directions_x53j.svg": "/schoolApp/static/media/undraw_directions_x53j.39379b53.svg"
+    "main.css": "/schoole_front/static/css/main.a9f2d649.chunk.css",
+    "main.js": "/schoole_front/static/js/main.71dd0cb5.chunk.js",
+    "main.js.map": "/schoole_front/static/js/main.71dd0cb5.chunk.js.map",
+    "runtime-main.js": "/schoole_front/static/js/runtime-main.5dd47f4d.js",
+    "runtime-main.js.map": "/schoole_front/static/js/runtime-main.5dd47f4d.js.map",
+    "static/css/2.e3885d78.chunk.css": "/schoole_front/static/css/2.e3885d78.chunk.css",
+    "static/js/2.ebca1287.chunk.js": "/schoole_front/static/js/2.ebca1287.chunk.js",
+    "static/js/2.ebca1287.chunk.js.map": "/schoole_front/static/js/2.ebca1287.chunk.js.map",
+    "index.html": "/schoole_front/index.html",
+    "precache-manifest.0b9765f3bc9f116868d3ce9e45865831.js": "/schoole_front/precache-manifest.0b9765f3bc9f116868d3ce9e45865831.js",
+    "service-worker.js": "/schoole_front/service-worker.js",
+    "static/css/2.e3885d78.chunk.css.map": "/schoole_front/static/css/2.e3885d78.chunk.css.map",
+    "static/css/main.a9f2d649.chunk.css.map": "/schoole_front/static/css/main.a9f2d649.chunk.css.map",
+    "static/js/2.ebca1287.chunk.js.LICENSE.txt": "/schoole_front/static/js/2.ebca1287.chunk.js.LICENSE.txt",
+    "static/media/c1.jpg": "/schoole_front/static/media/c1.10e069e5.jpg",
+    "static/media/c3.jpg": "/schoole_front/static/media/c3.302d2cdf.jpg",
+    "static/media/c5.jpg": "/schoole_front/static/media/c5.14f219b7.jpg",
+    "static/media/c6.jpg": "/schoole_front/static/media/c6.16114559.jpg",
+    "static/media/c7.jpg": "/schoole_front/static/media/c7.ae11993a.jpg",
+    "static/media/undraw_directions_x53j.svg": "/schoole_front/static/media/undraw_directions_x53j.39379b53.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.1834606d.js",
+    "static/js/runtime-main.5dd47f4d.js",
     "static/css/2.e3885d78.chunk.css",
     "static/js/2.ebca1287.chunk.js",
     "static/css/main.a9f2d649.chunk.css",
-    "static/js/main.232986fb.chunk.js"
+    "static/js/main.71dd0cb5.chunk.js"
   ]
 }
