@@ -19,6 +19,34 @@ export default function Contact() {
 
         <div>
           <h1>Contact Us</h1>
+          <form className="col">
+            <div className="g-row">
+              <div>
+                <label>Email :</label>
+                <input type="email" name="emil" />
+              </div>
+            </div>
+            <div>
+              <span className="error-msg">The error message</span>
+            </div>
+            <div className="g-row">
+              <div>
+                <label>Message :</label>
+
+                <textarea
+                  name="message"
+                  placeholder="Enter the message "
+                ></textarea>
+              </div>
+            </div>
+            <div>
+              <span className="error-msg">Error message</span>
+            </div>
+            <div>
+              {" "}
+              <button>Submit</button>
+            </div>
+          </form>
         </div>
       </div>
 

@@ -52,7 +52,7 @@ main {
 }
 
 .home-title {
-  font-family: "Crimson Text", serif;
+  font-family: "Roboto Mono", monospace;
   text-transform: uppercase;
   font-size: 3rem;
   text-align: center;
@@ -100,7 +100,9 @@ main {
   border: 1px solid black;
   margin-top: 1rem;
 }
-.g-row input[type="text"] {
+.g-row input[type="text"],
+input[type="number"],
+input[type="date"] {
   width: 70%;
   border: 0;
   border-bottom: ridge;
@@ -135,13 +137,13 @@ main {
   color: white;
 }
 .contact-title {
-  font-family: "Baloo Tamma 2", cursive;
+  font-family: "Roboto Mono", monospace;
   font-size: larger;
   font-weight: 900;
   letter-spacing: 0.2ch;
 }
 .contact-body {
-  font-family: "Baloo Tamma 2", cursive;
+  font-family: "Roboto Mono", monospace;
   letter-spacing: 0.1ch;
   margin-left: 1rem;
 }
