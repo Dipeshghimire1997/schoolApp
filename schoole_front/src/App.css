@@ -202,3 +202,7 @@ label {
   margin-bottom: 1rem;
   font-size: 1rem;
 }
+.error-msg {
+  color: red;
+  letter-spacing: 0.1cm;
+}

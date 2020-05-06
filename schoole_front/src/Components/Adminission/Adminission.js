@@ -1,6 +1,9 @@
-import React from "react";
-
+import React, { useState, useEffect } from "react";
+import { useForm } from "react-hook-form";
 let Adminission = (props) => {
+  const { register, handleSubmit, errors } = useForm();
+
+  let adminissionHandelete = (data) => console.log(data);
   return (
     <div className="application-form-page ">
       {/* the header  */}
@@ -25,7 +28,7 @@ let Adminission = (props) => {
       </div>
 
       {/* form start */}
-      <form>
+      <form onSubmit={handleSubmit(adminissionHandelete)}>
         <div className="border-all">
           <div className="col" style={{ marginTop: "1rem" }}>
             {/* 0 */}
@@ -36,71 +39,125 @@ let Adminission = (props) => {
               </div>
               <div>
                 <label>S.No :</label>
-                <input name="s.no" type="number" />
+                <input
+                  name="s_no"
+                  type="number"
+                  phone
+                  no
+                  ref={register({
+                    required: " S.No no is empty",
+                    pattern: {
+                      value: /^[0-9]{1,15}$/,
+                      message: "should contain numbers",
+                    },
+                  })}
+                />
               </div>
             </div>
             <div className="g-row">
               <div>
-                <small>Error message</small>
+                <small className="error-msg">Dont know this have to ask </small>
               </div>
               <div>
-                <small>Error message</small>
+                {errors.s_no && (
+                  <small className="error-msg">{errors.s_no.message}</small>
+                )}
               </div>
             </div>
             {/* 1 */}
             <div className="g-row">
               <div>
                 <label>Name of Pupil</label>
-                <input name="namePupil" type="text" />
+                <input
+                  name="namePupil"
+                  type="text"
+                  ref={register({
+                    required: "Name is empty",
+                    pattern: {
+                      value: /^[a-z A-Z]{3,20}$/,
+                      message: "Name only contain alphabetes",
+                    },
+                  })}
+                />
               </div>
               <div className="row space-around">
                 <div>
                   <label>Girl : </label>
-                  <input name="gender" type="radio" value="girl" />
+                  <input name="gender" type="radio" value="girl" required />
                 </div>
                 <div>
                   <label>Boy : </label>
-                  <input name="gender" type="radio" value="boy" />
+                  <input name="gender" type="radio" value="boy" required />
                 </div>
                 <div>
                   <label>Other : </label>
-                  <input name="gender" type="radio" value="other" />
+                  <input name="gender" type="radio" value="other" required />
                 </div>
               </div>
             </div>
 
             <div className="g-row">
               <div>
-                <small className="error-msg">Error message</small>
+                {errors.namePupil && (
+                  <small className="error-msg">
+                    {errors.namePupil.message}
+                  </small>
+                )}
               </div>
               <div>
-                <small className="error-msg">Error message</small>
+                {/* <small className="error-msg">Error message</small> */}
               </div>
             </div>
             {/* 2 */}
             <div className="g-row">
               <div>
                 <label>Date Of Birth</label>
-                <input name="dob" type="date" />
+                <input name="dob" type="date" required />
               </div>
             </div>
             {/* 3 */}
             <div className="g-row">
               <div>
                 <label>Place Of Birth : </label>
-                <input name="placedob" type="text" />
+                <input
+                  name="placedob"
+                  type="text"
+                  ref={register({
+                    required: "Place Of Birth is empty",
+                    pattern: {
+                      value: /^[#.0-9a-zA-Z\s,-]{10,30}$/,
+                      message: "Enter a valid address",
+                    },
+                  })}
+                />
               </div>
               <div>
                 <label>Nationality : </label>
-                <input name="nationality" type="text" />
+                <input
+                  name="nationality"
+                  type="text"
+                  ref={register({
+                    required: "Nationality is empty",
+                    pattern: {
+                      value: /^[a-z A-Z]{3,20}$/,
+                      message: "Nationality only contain alphabetes",
+                    },
+                  })}
+                />
               </div>
             </div>
             <div className="g-row">
               <div>
-                <small className="error-msg">Error message</small>
+                {errors.placedob && (
+                  <small className="error-msg">{errors.placedob.message}</small>
+                )}
               </div>
               <div>
-                <small className="error-msg">Error message</small>
+                {errors.nationality && (
+                  <small className="error-msg">
+                    {errors.nationality.message}
+                  </small>
+                )}
               </div>
             </div>
 
@@ -108,12 +165,24 @@ let Adminission = (props) => {
             <div className="g-row">
               <div>
                 <label>Religion : </label>
-                <input name="religion" type="text" />
+                <input
+                  name="religion"
+                  type="text"
+                  ref={register({
+                    required: "Religion is empty",
+                    pattern: {
+                      value: /^[a-z A-Z]{3,20}$/,
+                      message: "Religion only contain alphabetes",
+                    },
+                  })}
+                />
               </div>
             </div>
             <div className="g-row">
               <div>
-                <small className="error-msg">Error message</small>
+                {errors.religion && (
+                  <small className="error-msg">{errors.religion.message}</small>
+                )}
               </div>
             </div>
 
@@ -123,63 +192,169 @@ let Adminission = (props) => {
                 <label style={{ alignSelf: "center " }}> Father</label>
                 <div>
                   <label>Name : </label>
-                  <input name="fName" type="text" />
+                  <input
+                    name="fName"
+                    type="text"
+                    ref={register({
+                      required: "Name is empty",
+                      pattern: {
+                        value: /^[a-z A-Z]{3,20}$/,
+                        message: "Name only contain alphabetes",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.fName && (
+                    <small className="error-msg">{errors.fName.message}</small>
+                  )}
                 </div>
 
                 <div>
                   <label>Occupation : </label>
-                  <input name="fOccupation" type="text" />
+                  <input
+                    name="fOccupation"
+                    type="text"
+                    ref={register({
+                      required: "Occupation is empty",
+                      pattern: {
+                        value: /^[a-z A-Z]{3,20}$/,
+                        message: "Occupation only contain alphabetes",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.fOccupation && (
+                    <small className="error-msg">
+                      {errors.fOccupation.message}
+                    </small>
+                  )}
                 </div>
                 <div>
                   <label>Mobile No : </label>
-                  <input name="fMobileNo" type="text" />
+                  <input
+                    name="fMobileNo"
+                    type="text"
+                    ref={register({
+                      required: " Phone no is empty",
+                      pattern: {
+                        value: /^[0-9]{10,10}$/,
+                        message: " Phone no should contain only 10 numbers",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.fMobileNo && (
+                    <small className="error-msg">
+                      {errors.fMobileNo.message}
+                    </small>
+                  )}
                 </div>
                 <div>
                   <label>Off. No : </label>
-                  <input name="fOffNo" type="text" />
+                  <input
+                    name="fOffNo"
+                    type="text"
+                    placeholder=" 014412345"
+                    ref={register({
+                      required: " Phone no is empty",
+                      pattern: {
+                        value: /^[0-9]{9,9}$/,
+                        message: " Phone no should contain only 9 numbers",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.fOffNo && (
+                    <small className="error-msg">{errors.fOffNo.message}</small>
+                  )}
                 </div>
               </div>
               <div className="col border-all">
                 <label style={{ alignSelf: "center " }}> Mother</label>
                 <div>
                   <label>Name : </label>
-                  <input name="mName" type="text" />
+                  <input
+                    name="mName"
+                    type="text"
+                    ref={register({
+                      required: "Name is empty",
+                      pattern: {
+                        value: /^[a-z A-Z]{3,20}$/,
+                        message: "Name only contain alphabetes",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.mName && (
+                    <small className="error-msg">{errors.mName.message}</small>
+                  )}
                 </div>
                 <div>
                   <label>Occupation : </label>
-                  <input name="mOccupation" type="text" />
+                  <input
+                    name="mOccupation"
+                    type="text"
+                    ref={register({
+                      required: "Occupation is empty",
+                      pattern: {
+                        value: /^[a-z A-Z]{3,20}$/,
+                        message: "Occupation only contain alphabetes",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.mOccupation && (
+                    <small className="error-msg">
+                      {errors.mOccupation.message}
+                    </small>
+                  )}
                 </div>
                 <div>
                   <label>Mobile No : </label>
-                  <input name="mMobileNo" type="text" />
+                  <input
+                    name="mMobileNo"
+                    type="text"
+                    ref={register({
+                      required: " Phone no is empty",
+                      pattern: {
+                        value: /^[0-9]{10,10}$/,
+                        message: " Phone no should contain only 10 numbers",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.mMobileNo && (
+                    <small className="error-msg">
+                      {errors.mMobileNo.message}
+                    </small>
+                  )}
                 </div>
                 <div>
                   <label>Off. No : </label>
-                  <input name="mOffNo" type="text" />
+                  <input
+                    name="mOffNo"
+                    type="text"
+                    placeholder=" 014412345"
+                    ref={register({
+                      required: " Phone no is empty",
+                      pattern: {
+                        value: /^[0-9]{9,9}$/,
+                        message: " Phone no should contain only 9 numbers",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.mOffNo && (
+                    <small className="error-msg">{errors.mOffNo.message}</small>
+                  )}
                 </div>
               </div>
             </div>
@@ -189,37 +364,90 @@ let Adminission = (props) => {
             <div className="g-row" style={{ marginTop: "1rem" }}>
               <div>
                 <label>Full Address :</label>
-                <input type="text" name="pFAddress" />
+                <input
+                  type="text"
+                  name="pFAddress"
+                  ref={register({
+                    required: "Address is empty",
+                    pattern: {
+                      value: /^[#.0-9a-zA-Z\s,-]{10,30}$/,
+                      message: "Enter a valid address",
+                    },
+                  })}
+                />
               </div>
             </div>
             <div>
-              <small className="error-msg">Error message</small>
+              {errors.pFAddress && (
+                <small className="error-msg">{errors.pFAddress.message}</small>
+              )}
             </div>
             <div>
               <label>Details Of Guardian</label>
               <div className="g-row">
                 <div>
                   <label>Name : </label>
-                  <input name="gName" type="text" />
+                  <input
+                    name="gName"
+                    type="text"
+                    ref={register({
+                      required: "Name is empty",
+                      pattern: {
+                        value: /^[a-z A-Z]{3,20}$/,
+                        message: "Name only contain alphabetes",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
                   <label>Full Address : </label>
-                  <input name="fAddress" type="text" />
+                  <input
+                    name="fAddress"
+                    type="text"
+                    ref={register({
+                      required: "Address is empty",
+                      pattern: {
+                        value: /^[#.0-9a-zA-Z\s,-]{10,30}$/,
+                        message: "Enter a valid address",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
                   <label>Contact Nos :</label>
-                  <input name="allContactNo" type="text" />
+                  <input
+                    name="allContactNo"
+                    type="text"
+                    placeholder="  014412345 - 9841234567"
+                    ref={register({
+                      required: " Phone no is empty",
+                      pattern: {
+                        value: /^[#.0-9\s,-]{10,30}$/,
+                        message: "Requires at least two numbers",
+                      },
+                    })}
+                  />
                 </div>
               </div>
               <div className="g-row">
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.gName && (
+                    <small className="error-msg">{errors.gName.message}</small>
+                  )}
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.fAddress && (
+                    <small className="error-msg">
+                      {errors.fAddress.message}
+                    </small>
+                  )}
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.allContactNo && (
+                    <small className="error-msg">
+                      {errors.allContactNo.message}
+                    </small>
+                  )}
                 </div>
               </div>
             </div>
@@ -230,26 +458,71 @@ let Adminission = (props) => {
               <div className="g-row">
                 <div>
                   <label>Blood Group :</label>
-                  <input name="bloodGroup" type="text" />
+                  <input
+                    name="bloodGroup"
+                    type="text"
+                    placeholder=" AB+"
+                    ref={register({
+                      required: "Blood Group is empty",
+                      pattern: {
+                        value: /^[#.A-Z\s,+ -]{1,4}$/,
+                        message: "Enter a valid Blood Group",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
                   <label>Vaccinations :</label>
-                  <input name="vaccinationsTaken" type="text" />
+                  <input
+                    name="vaccinationsTaken"
+                    type="text"
+                    ref={register({
+                      required: "Vaccinations is empty",
+                      pattern: {
+                        value: /^[#.0-9a-zA-Z\s,-]{3,30}$/,
+                        message: "All types of Vaccinations",
+                      },
+                    })}
+                  />
                 </div>
                 <div>
                   <label>Any Allergies:</label>
-                  <input name="anyAllergies" type="text" />
+                  <input
+                    name="anyAllergies"
+                    type="text"
+                    placeholder=" if no Allergies type null"
+                    ref={register({
+                      required: "Allergies is empty",
+                      pattern: {
+                        value: /^[#.0-9a-zA-Z\s,-]{3,30}$/,
+                        message:
+                          "All types of Allergies if no Allergies type null",
+                      },
+                    })}
+                  />
                 </div>
               </div>
               <div className="g-row">
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.bloodGroup && (
+                    <small className="error-msg">
+                      {errors.bloodGroup.message}
+                    </small>
+                  )}
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.vaccinationsTaken && (
+                    <small className="error-msg">
+                      {errors.vaccinationsTaken.message}
+                    </small>
+                  )}
                 </div>
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.anyAllergies && (
+                    <small className="error-msg">
+                      {errors.anyAllergies.message}
+                    </small>
+                  )}
                 </div>
               </div>
             </div>
@@ -265,24 +538,34 @@ let Adminission = (props) => {
               <div className="g-row">
                 <div>
                   <label>Place :</label>
-                  <input type="text" name="place" />
+                  <input
+                    type="text"
+                    name="place"
+                    placeholder=" ktm nepal"
+                    ref={register({
+                      required: "Address is empty",
+                      pattern: {
+                        value: /^[#.0-9a-zA-Z\s,-]{10,30}$/,
+                        message: "Enter a valid address",
+                      },
+                    })}
+                  />
                 </div>
               </div>
               <div className="g-row">
                 <div>
-                  <small className="error-msg">Error message</small>
+                  {errors.place && (
+                    <small className="error-msg">{errors.place.message}</small>
+                  )}
                 </div>
               </div>
 
               <div>
-                <input type="checkbox" className="w3-check" />
+                <input type="checkbox" className="w3-check" required />
                 <label style={{ marginLeft: "1rem" }}>
                   I declare that the details mentioned above about my child are
                   true . I shall abide by the rule & regulations of the schoole
                 </label>
-              </div>
-              <div>
-                <small>Error message</small>
               </div>
               <div>
                 <button className="btn-submit">Submit</button>
