@@ -7,15 +7,28 @@ let Adminission = (props) => {
   return (
     <div className="application-form-page ">
       {/* the header  */}
-      <div className="g-row space-around">
+      <div
+        className="g-row space-around"
+        style={{
+          justifyItems: "center",
+        }}
+      >
         <div>Logo</div>
-        <div className="center">
-          <h1>CHAMPS WORLD</h1>
-          <div>Dallu , Chagal , Kathmandu</div>
-          <div>9849180494/9808581308</div>
-          <div>
-            or <a href="https://www.facebook.com/champsworld1">FaceBook</a>
-          </div>
+        <div>
+          <center>
+            <h1>CHAMPS WORLD</h1>
+          </center>
+          <center>
+            <div>Dallu , Chagal , Kathmandu</div>
+          </center>
+          <center>
+            <div>9849180494/9808581308</div>
+          </center>
+          <center>
+            <div>
+              or <a href="https://www.facebook.com/champsworld1">FaceBook</a>
+            </div>
+          </center>
         </div>
         <div>Image</div>
       </div>
@@ -35,35 +48,23 @@ let Adminission = (props) => {
             <div className="g-row">
               <div>
                 <label>Class Applied For :</label>{" "}
-                <input name="classApplied" type="text" />
-              </div>
-              <div>
-                <label>S.No :</label>
-                <input
-                  name="s_no"
-                  type="number"
-                  phone
-                  no
-                  ref={register({
-                    required: " S.No no is empty",
-                    pattern: {
-                      value: /^[0-9]{1,15}$/,
-                      message: "should contain numbers",
-                    },
-                  })}
-                />
+                <select
+                  style={{ width: "10rem" }}
+                  className="w3-select"
+                  name="classApplied"
+                >
+                  <option selected disabled>
+                    ............
+                  </option>
+
+                  <option value="playgroup">Playgroup</option>
+                  <option value="nursery">Nursery</option>
+                  <option value="rep_1">Prep 1</option>
+                  <option value="prep_2">Prep 2</option>
+                </select>
               </div>
             </div>
-            <div className="g-row">
-              <div>
-                <small className="error-msg">Dont know this have to ask </small>
-              </div>
-              <div>
-                {errors.s_no && (
-                  <small className="error-msg">{errors.s_no.message}</small>
-                )}
-              </div>
-            </div>
+
             {/* 1 */}
             <div className="g-row">
               <div>
