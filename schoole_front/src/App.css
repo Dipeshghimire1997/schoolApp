@@ -1,3 +1,18 @@
+body {
+  color: black;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+}
+body::-webkit-scrollbar {
+  width: 0.25rem;
+}
+body::-webkit-scrollbar-track {
+  background: #1e1e24;
+}
+body::-webkit-scrollbar-thunb {
+  background: #6649b8;
+}
 .m-3r {
   margin: 2rem;
 }
@@ -205,4 +220,21 @@ label {
 .error-msg {
   color: red;
   letter-spacing: 0.1cm;
+}
+.home-why {
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  /* letter-spacing: 0.05cm; */
+}
+.home-why .g-row {
+  margin-top: 2rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+.home-why li {
+  text-transform: capitalize;
+  font-weight: bold;
 }

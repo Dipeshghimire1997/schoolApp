@@ -4,13 +4,13 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const router = express.Router();
 const connect = require("./Connect/connect");
-// const routers = require("./router/");
+const routers = require("./routers/");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cors());
-// app.use("/api/v/", routers(router));
-// const PORT = process.env.PORT || 3003;
-const PORT = 3003;
+app.use("/api/v/", routers(router));
+const PORT = process.env.PORT || 3003;
+// const PORT = 3003;
 
 app.listen(PORT, () => console.log(`Server is now in port no ${PORT}`));

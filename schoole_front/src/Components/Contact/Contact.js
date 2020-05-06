@@ -18,7 +18,7 @@ export default function Contact() {
         </div>
 
         <div>
-          <h1>Contact Us</h1>
+          <h1>Feedback</h1>
           <form className="col" onSubmit={handleSubmit(HandelEmail)}>
             <div className="g-row">
               <div className="m-3r">

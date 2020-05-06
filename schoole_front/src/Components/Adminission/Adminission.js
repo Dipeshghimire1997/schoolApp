@@ -13,7 +13,6 @@ let Adminission = (props) => {
           justifyItems: "center",
         }}
       >
-        <div>Logo</div>
         <div>
           <center>
             <h1>CHAMPS WORLD</h1>
@@ -30,7 +29,6 @@ let Adminission = (props) => {
             </div>
           </center>
         </div>
-        <div>Image</div>
       </div>
       {/* appolcation info */}
       <div className="m-3r">
@@ -89,10 +87,6 @@ let Adminission = (props) => {
                 <div>
                   <label>Boy : </label>
                   <input name="gender" type="radio" value="boy" required />
-                </div>
-                <div>
-                  <label>Other : </label>
-                  <input name="gender" type="radio" value="other" required />
                 </div>
               </div>
             </div>
@@ -419,12 +413,11 @@ let Adminission = (props) => {
                   <input
                     name="allContactNo"
                     type="text"
-                    placeholder="  014412345 - 9841234567"
                     ref={register({
-                      required: " Phone no is empty",
+                      required: "Phone no is empty",
                       pattern: {
-                        value: /^[#.0-9\s,-]{10,30}$/,
-                        message: "Requires at least two numbers",
+                        value: /^[0-9]{10,10}$/,
+                        message: "Requires a valid number",
                       },
                     })}
                   />
@@ -491,13 +484,13 @@ let Adminission = (props) => {
                   <input
                     name="anyAllergies"
                     type="text"
-                    placeholder=" if no Allergies type null"
+                    placeholder=" if no Allergies type none"
                     ref={register({
                       required: "Allergies is empty",
                       pattern: {
                         value: /^[#.0-9a-zA-Z\s,-]{3,30}$/,
                         message:
-                          "All types of Allergies if no Allergies type null",
+                          "All types of Allergies if no Allergies type none",
                       },
                     })}
                   />
@@ -565,7 +558,7 @@ let Adminission = (props) => {
                 <input type="checkbox" className="w3-check" required />
                 <label style={{ marginLeft: "1rem" }}>
                   I declare that the details mentioned above about my child are
-                  true . I shall abide by the rule & regulations of the schoole
+                  true . I shall abide by the rule & regulations of the school
                 </label>
               </div>
               <div>
