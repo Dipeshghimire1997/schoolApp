@@ -89,6 +89,7 @@ main {
 .application-form-page {
   margin-bottom: 2rem;
   padding: 0;
+  font-family: "Roboto Mono", monospace;
 }
 .g-row {
   display: grid;
@@ -137,6 +138,7 @@ input[type="date"] {
   color: white;
 }
 .contact-title {
+  padding-top: 2rem;
   font-family: "Roboto Mono", monospace;
   font-size: larger;
   font-weight: 900;
@@ -149,4 +151,54 @@ input[type="date"] {
 }
 .contact-body span {
   font-weight: bolder;
+}
+.btn-submit {
+  display: block;
+  width: 25%;
+  height: 40px;
+  border-radius: 25px;
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  border: none;
+  background-image: linear-gradient(to right, #83cf88, #67f173, #23e430);
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Roboto Mono", monospace;
+  background-size: 200%;
+  transition: 0.5s;
+}
+.btn-submit:hover {
+  background-position: right;
+}
+.msg-container {
+  background-color: red;
+  margin: 0;
+  padding: 0;
+  border-radius: 15px;
+  margin-top: 2rem;
+}
+.msg-info {
+  padding-top: 2rem;
+}
+.msg-title {
+  margin-left: 2rem;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: larger;
+  letter-spacing: 0.2ch;
+}
+.msg-controller {
+  background-color: transparent;
+  height: 5rem;
+  overflow-x: auto;
+}
+.msg-controller div {
+  margin: 1rem;
+}
+
+label {
+  font-weight: bold;
+
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }

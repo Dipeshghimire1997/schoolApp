@@ -19,32 +19,54 @@ export default function Contact() {
 
         <div>
           <h1>Contact Us</h1>
-          <form className="col">
+          <form className="col" onSubmit={handleSubmit(HandelEmail)}>
             <div className="g-row">
-              <div>
+              <div className="m-3r">
                 <label>Email :</label>
-                <input type="email" name="emil" />
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Enter a valid email"
+                  ref={register({
+                    required: " Email is empty",
+                    pattern: {
+                      value: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      message: "Unvalid Email please try again",
+                    },
+                  })}
+                />
               </div>
             </div>
             <div>
-              <span className="error-msg">The error message</span>
+              {errors.email && (
+                <small style={{ color: "red" }}>{errors.email.message}</small>
+              )}
             </div>
             <div className="g-row">
-              <div>
+              <div className="m-3r">
                 <label>Message :</label>
 
                 <textarea
                   name="message"
                   placeholder="Enter the message "
+                  ref={register({
+                    required: "The field is Empty",
+                    pattern: {
+                      value: /^[a-z A-Z]{10,150}$/,
+                      message: "Should contain 10  alphadets",
+                    },
+                  })}
                 ></textarea>
               </div>
             </div>
             <div>
-              <span className="error-msg">Error message</span>
+              {errors.message && (
+                <small style={{ color: "red" }}>{errors.message.message}</small>
+              )}
             </div>
             <div>
               {" "}
-              <button>Submit</button>
+              <button className="btn-submit">Submit</button>
             </div>
           </form>
         </div>
@@ -73,25 +95,20 @@ export default function Contact() {
             </div>
           </div>
         </div>
-        <div>
-          <div className="contact-container">
-            <div className="contact-info">
-              <div className="m-3r">
-                <div className="contact-title">
-                  <h2>You Can Also Contact Us By</h2>
+        <div className="contact-container">
+          <div className="contact-info">
+            <div className="m-3r">
+              <div className="contact-title">
+                <h2>Messages we receive</h2>
+              </div>
+              <div className="msg-controller col ">
+                <div>
+                  the message of the inofa;lskdj asdfl;kasdf asdfjk haslkdjf
+                  halksjd lkajsdfhlkajsd aklsjdfh fas dasdf asdf
                 </div>
-                <div className="contact-body">
-                  <div>
-                    <span>Email :</span> "emial@email.com"
-                  </div>
-                  <div>
-                    <span>phone no :</span>
-                    "phone no "
-                  </div>
-                  <div>
-                    <span>Address :</span>
-                    this is the addresd
-                  </div>
+                <div>
+                  the message of the inofa;lskdj asdfl;kasdf asdfjk haslkdjf
+                  halksjd lkajsdfhlkajsd aklsjdfh fas dasdf asdf
                 </div>
               </div>
             </div>

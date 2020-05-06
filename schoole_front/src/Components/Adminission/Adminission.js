@@ -11,8 +11,7 @@ let Adminission = (props) => {
           <div>Dallu , Chagal , Kathmandu</div>
           <div>9849180494/9808581308</div>
           <div>
-            or
-            <a href="https://www.facebook.com/champsworld1"> FaceBook</a>
+            or <a href="https://www.facebook.com/champsworld1">FaceBook</a>
           </div>
         </div>
         <div>Image</div>
@@ -40,6 +39,14 @@ let Adminission = (props) => {
                 <input name="s.no" type="number" />
               </div>
             </div>
+            <div className="g-row">
+              <div>
+                <small>Error message</small>
+              </div>
+              <div>
+                <small>Error message</small>
+              </div>
+            </div>
             {/* 1 */}
             <div className="g-row">
               <div>
@@ -61,6 +68,15 @@ let Adminission = (props) => {
                 </div>
               </div>
             </div>
+
+            <div className="g-row">
+              <div>
+                <small className="error-msg">Error message</small>
+              </div>
+              <div>
+                <small className="error-msg">Error message</small>
+              </div>
+            </div>
             {/* 2 */}
             <div className="g-row">
               <div>
@@ -79,6 +95,14 @@ let Adminission = (props) => {
                 <input name="nationality" type="text" />
               </div>
             </div>
+            <div className="g-row">
+              <div>
+                <small className="error-msg">Error message</small>
+              </div>
+              <div>
+                <small className="error-msg">Error message</small>
+              </div>
+            </div>
 
             {/* 5 */}
             <div className="g-row">
@@ -87,45 +111,75 @@ let Adminission = (props) => {
                 <input name="religion" type="text" />
               </div>
             </div>
+            <div className="g-row">
+              <div>
+                <small className="error-msg">Error message</small>
+              </div>
+            </div>
 
             {/* 6 */}
             <div className="g-row ">
               <div className="col border-all">
-                <span style={{ alignSelf: "center " }}> Father</span>
+                <label style={{ alignSelf: "center " }}> Father</label>
                 <div>
                   <label>Name : </label>
                   <input name="fName" type="text" />
                 </div>
                 <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+
+                <div>
                   <label>Occupation : </label>
                   <input name="fOccupation" type="text" />
+                </div>
+                <div>
+                  <small className="error-msg">Error message</small>
                 </div>
                 <div>
                   <label>Mobile No : </label>
                   <input name="fMobileNo" type="text" />
                 </div>
                 <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+                <div>
                   <label>Off. No : </label>
                   <input name="fOffNo" type="text" />
                 </div>
+                <div>
+                  <small className="error-msg">Error message</small>
+                </div>
               </div>
               <div className="col border-all">
-                <span style={{ alignSelf: "center " }}> Mother</span>
+                <label style={{ alignSelf: "center " }}> Mother</label>
                 <div>
                   <label>Name : </label>
                   <input name="mName" type="text" />
+                </div>
+                <div>
+                  <small className="error-msg">Error message</small>
                 </div>
                 <div>
                   <label>Occupation : </label>
                   <input name="mOccupation" type="text" />
                 </div>
                 <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+                <div>
                   <label>Mobile No : </label>
                   <input name="mMobileNo" type="text" />
                 </div>
                 <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+                <div>
                   <label>Off. No : </label>
                   <input name="mOffNo" type="text" />
+                </div>
+                <div>
+                  <small className="error-msg">Error message</small>
                 </div>
               </div>
             </div>
@@ -137,6 +191,9 @@ let Adminission = (props) => {
                 <label>Full Address :</label>
                 <input type="text" name="pFAddress" />
               </div>
+            </div>
+            <div>
+              <small className="error-msg">Error message</small>
             </div>
             <div>
               <label>Details Of Guardian</label>
@@ -152,6 +209,17 @@ let Adminission = (props) => {
                 <div>
                   <label>Contact Nos :</label>
                   <input name="allContactNo" type="text" />
+                </div>
+              </div>
+              <div className="g-row">
+                <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+                <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+                <div>
+                  <small className="error-msg">Error message</small>
                 </div>
               </div>
             </div>
@@ -173,6 +241,17 @@ let Adminission = (props) => {
                   <input name="anyAllergies" type="text" />
                 </div>
               </div>
+              <div className="g-row">
+                <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+                <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+                <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -183,19 +262,30 @@ let Adminission = (props) => {
             style={{ marginTop: "1rem", marginBottom: "1rem" }}
           >
             <div>
-              <div>
-                <label>Place :</label>
-                <input type="text" name="place" />
+              <div className="g-row">
+                <div>
+                  <label>Place :</label>
+                  <input type="text" name="place" />
+                </div>
               </div>
+              <div className="g-row">
+                <div>
+                  <small className="error-msg">Error message</small>
+                </div>
+              </div>
+
               <div>
                 <input type="checkbox" className="w3-check" />
-                <label>
+                <label style={{ marginLeft: "1rem" }}>
                   I declare that the details mentioned above about my child are
                   true . I shall abide by the rule & regulations of the schoole
                 </label>
               </div>
               <div>
-                <button>Submit</button>
+                <small>Error message</small>
+              </div>
+              <div>
+                <button className="btn-submit">Submit</button>
               </div>
             </div>
           </div>

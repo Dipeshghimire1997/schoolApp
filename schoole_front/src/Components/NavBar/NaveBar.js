@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Nav, Navbar } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 let NaveBar = (props) => {
   const [navLists, setNavLists] = useState([]);
   const Unvalid_Users = [
     { to: "/", link: "Home" },
-    { to: "/about", link: "About" },
     { to: "/contact", link: "Contact" },
     { to: "/admit", link: "Adminission" },
   ];
