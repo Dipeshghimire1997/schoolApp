@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
+require("dotenv/config");
 mongoose.set("useCreateIndex", true);
 const db = mongoose.connect(
-  "mongodb+srv://hanif:hanif123@champsworld-kz086.mongodb.net/test?retryWrites=true&w=majority",
+  process.env.DB_connect,
   { useNewUrlParser: true, useUnifiedTopology: true },
   () => {
     console.log("Connection to mongoosdb");

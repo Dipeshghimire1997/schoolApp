@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import { connect, connectAdvanced } from "react-redux";
 import { useForm } from "react-hook-form";
+import * as actions from "../../Store/Action";
 import back from "../../Assets/Images/undraw_directions_x53j.svg";
 
 let Contact = (props) => {
   const { register, handleSubmit, errors } = useForm();
-  const [contact, setContact] = useState();
+  const [contacts, setContacts] = useState();
+
+  useEffect(() => {
+    props.getContacts();
+  }, []);
+  useEffect(() => {
+    props.contacts && setContacts(props.contacts);
+  }, [props.contacts]);
 
   let HandelEmail = (data) => {
-    console.log(data);
+    props.postContacts(data);
   };
 
   return (
@@ -69,7 +77,6 @@ let Contact = (props) => {
               )}
             </div>
             <div>
-              {" "}
               <button className="btn-submit">Submit</button>
             </div>
           </form>
@@ -106,14 +113,13 @@ let Contact = (props) => {
                 <h2>Messages we receive</h2>
               </div>
               <div className="msg-controller col ">
-                <div>
-                  the message of the inofa;lskdj asdfl;kasdf asdfjk haslkdjf
-                  halksjd lkajsdfhlkajsd aklsjdfh fas dasdf asdf
-                </div>
-                <div>
-                  the message of the inofa;lskdj asdfl;kasdf asdfjk haslkdjf
-                  halksjd lkajsdfhlkajsd aklsjdfh fas dasdf asdf
-                </div>
+                {contacts &&
+                  Object.values(contacts)
+                    .slice(-10)
+                    .reverse()
+                    .map((message, key) => (
+                      <div key={key}>{message.message}</div>
+                    ))}
               </div>
             </div>
           </div>
@@ -123,4 +129,16 @@ let Contact = (props) => {
   );
 };
 
-export default Contact;
+let mapStateToProps = (state) => {
+  return {
+    contacts: state.Contactreducer.contact_messages,
+  };
+};
+
+let mapDispatchToProps = (dispatch) => {
+  return {
+    postContacts: (data) => dispatch(actions.postContacts(data)),
+    getContacts: () => dispatch(actions.getContacts()),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(Contact);
