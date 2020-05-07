@@ -1,23 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
-import * as actions from "../../Store/Action";
 import back from "../../Assets/Images/undraw_directions_x53j.svg";
 
 let Contact = (props) => {
   const { register, handleSubmit, errors } = useForm();
   const [contact, setContact] = useState();
 
-  useEffect(() => {
-    props.getContactMsg();
-  }, []);
-
-  useEffect(() => {
-    props.contactData && console.log(props.contactData);
-  }, [props.contactData]);
-
   let HandelEmail = (data) => {
-    props.postContactMsg(data);
+    console.log(data);
   };
 
   return (
@@ -131,15 +122,5 @@ let Contact = (props) => {
     </div>
   );
 };
-let mapStateToProps = (state) => {
-  return {
-    contactData: state.ContactReducer.contactData,
-  };
-};
-let mapDispatchToProps = (dispatch) => {
-  return {
-    postContactMsg: (data) => dispatch(actions.postContactMsg(data)),
-    getContactMsg: () => dispatch(actions.getContactMsg()),
-  };
-};
-export default connect(mapStateToProps, mapDispatchToProps)(Contact);
+
+export default Contact;
