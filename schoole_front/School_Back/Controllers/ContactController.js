@@ -1,34 +1,51 @@
-var nodemailer = require("nodemailer");
-require("dotenv").config();
+const nodemailer = require("nodemailer");
+const mongoose = require("mongoose");
+const tab = require("../Models");
+require("dotenv/config");
 module.exports = {
-  getFeedBack: (req, res, next) => {
-    res.send("Hello fomr feedback");
+  getFeedBack: async (req, res, next) => {
+    let getMessages = await tab.Contact.find();
+    getMessages &&
+      res.json({ status: 200, message: "Success", data: getMessages });
+    !getMessages &&
+      res.json({ status: 400, message: "Error to get informatoin" });
   },
   postFeedBack: async (req, res, next) => {
     const data = req.body;
+    console.log(data);
     const output = `<div>
-    <p>U have just received the mail from ${data.email} n d msg is..... <p>"${data.message}"</p></p>
+    <p>U have just received the mail from "${data.email}" n d msg is..... <p>"${data.message}"</p></p>
   </div>`;
-    let transporter = nodemailer.createTransport({
+    var transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL,
-        pass: process.env.PASSWORD,
+        user: process.env.email,
+        pass: process.env.password,
       },
     });
-    var mailOptions = {
-      from: `${data.email}`,
-      to: process.env.EMAIL,
-      subject: "Feed Back Message received ",
+    var mailOprions = {
+      from: data.email,
+      to: "champsworld12@gmail.com",
+      subject: "Feed back from users",
       html: output,
     };
-    transporter.sendMail(mailOptions, (err, info) => {
+
+    transporter.sendMail(mailOprions, async (err, info) => {
       if (err) {
-        console.log("ERRORS ARE ::" + err);
-        res.render("contact", { msg: "Error" });
+        console.log(err);
+        res.json({ status: 400, message: "Message not send Invalid Email" });
       } else {
-        console.log("Success");
-        res.render("contact", { msg: "Success" });
+        console.log("Message send ");
+        let newMessage = tab.Contact({ data });
+        newMessage
+          .save()
+          .then((result) => res.json({ status: 200, message: "Success" }))
+          .catch((err) =>
+            res.json({
+              status: 400,
+              message: `Message not send Invalid Email ${err}`,
+            }),
+          );
       }
     });
   },
