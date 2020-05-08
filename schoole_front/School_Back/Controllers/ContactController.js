@@ -2,14 +2,14 @@ const tab = require("../Models");
 const nodemailer = require("nodemailer");
 module.exports = {
   getContacts: async (req, res) => {
-    console.log("form get contr");
     await tab.Contact.find()
       .then((result) => {
+        console.log(">>>>>", result);
         res.json({ status: 200, message: "Success", data: result });
       })
       .catch((err) => {
-        console.log("????", allContacts);
-        res.json({ status: 400, message: "Error", error: getContacts });
+        console.log("????", err);
+        res.json({ status: 400, message: "Error", error: err });
       });
   },
   postContacts: (req, res) => {
@@ -43,7 +43,7 @@ module.exports = {
         newContact
           .save()
           .then((result) => {
-            // console.log("????????Saved info");
+            console.log("????????Saved info");
             res.json({ status: 200, message: "Success" });
           })
           .catch((err) => {

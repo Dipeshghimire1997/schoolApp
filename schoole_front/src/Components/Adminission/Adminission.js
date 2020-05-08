@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
+
+import * as actions from "../../Store/Action";
+
 let Adminission = (props) => {
   const { register, handleSubmit, errors } = useForm();
-
-  let adminissionHandelete = (data) => console.log(data);
+  let adminissionHandelete = (data) => {
+    // console.log(data);
+    props.postAdmission(data);
+  };
   return (
     <div className="application-form-page ">
       {/* the header  */}
@@ -18,7 +24,7 @@ let Adminission = (props) => {
             <h1>CHAMPS WORLD</h1>
           </center>
           <center>
-            <div>Dallu , Chagal , Kathmandu</div>
+            <div>Dallu, Chagal, Kathmandu</div>
           </center>
           <center>
             <div>9849180494/9808581308</div>
@@ -34,7 +40,7 @@ let Adminission = (props) => {
       <div className="m-3r">
         <center>
           <h1>APPLICANT FORM</h1>
-          To Be Filled by Parent or Guardian In Capital Letters Only
+          To Be Filled by Parent or Guardian
         </center>
       </div>
 
@@ -50,10 +56,9 @@ let Adminission = (props) => {
                   style={{ width: "10rem" }}
                   className="w3-select"
                   name="classApplied"
+                  ref={register({ required: "Please chouse a class " })}
                 >
-                  <option selected disabled>
-                    ............
-                  </option>
+                  <option disabled>............</option>
 
                   <option value="playgroup">Playgroup</option>
                   <option value="nursery">Nursery</option>
@@ -61,12 +66,19 @@ let Adminission = (props) => {
                   <option value="prep_2">Prep 2</option>
                 </select>
               </div>
+              <div>
+                {errors.classApplied && (
+                  <small className="error-msg">
+                    {errors.classApplied.message}
+                  </small>
+                )}
+              </div>
             </div>
 
             {/* 1 */}
             <div className="g-row">
               <div>
-                <label>Name of Pupil</label>
+                <label>Name of Pupil : </label>
                 <input
                   name="namePupil"
                   type="text"
@@ -82,11 +94,21 @@ let Adminission = (props) => {
               <div className="row space-around">
                 <div>
                   <label>Girl : </label>
-                  <input name="gender" type="radio" value="girl" required />
+                  <input
+                    name="gender"
+                    type="radio"
+                    value="girl"
+                    ref={register({ required: "Please chouse a gender" })}
+                  />
                 </div>
                 <div>
                   <label>Boy : </label>
-                  <input name="gender" type="radio" value="boy" required />
+                  <input
+                    name="gender"
+                    type="radio"
+                    value="boy"
+                    ref={register({ required: "Please chouse a gender" })}
+                  />
                 </div>
               </div>
             </div>
@@ -100,15 +122,24 @@ let Adminission = (props) => {
                 )}
               </div>
               <div>
-                {/* <small className="error-msg">Error message</small> */}
+                {errors.gender && (
+                  <small className="error-msg">{errors.gender.message}</small>
+                )}
               </div>
             </div>
             {/* 2 */}
             <div className="g-row">
               <div>
-                <label>Date Of Birth</label>
-                <input name="dob" type="date" required />
+                <label>Date Of Birth : </label>
+                <input
+                  name="dob"
+                  type="date"
+                  ref={register({ required: "Date of Birth is required" })}
+                />
               </div>
+              {errors.dob && (
+                <small className="error-msg">{errors.dob.message}</small>
+              )}
             </div>
             {/* 3 */}
             <div className="g-row">
@@ -572,4 +603,13 @@ let Adminission = (props) => {
   );
 };
 
-export default Adminission;
+let mapStateToProps = (state) => {
+  return {};
+};
+let mapDispatchToProps = (dispatch) => {
+  return {
+    postAdmission: (data) => dispatch(actions.postingAdminissionForm(data)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Adminission);
