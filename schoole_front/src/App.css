@@ -115,6 +115,8 @@ main {
 .border-all {
   border: 1px solid black;
   margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding: 3px;
 }
 .g-row input[type="text"],
 input[type="number"],
@@ -237,4 +239,13 @@ label {
 .home-why li {
   text-transform: capitalize;
   font-weight: bold;
+}
+.view-table {
+  display: grid;
+  gap: 2rem;
+  font-family: "Roboto Mono", monospace;
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+}
+.data-container {
+  padding: 1rem;
 }

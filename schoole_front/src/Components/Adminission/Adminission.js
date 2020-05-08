@@ -60,10 +60,10 @@ let Adminission = (props) => {
                 >
                   <option disabled>............</option>
 
-                  <option value="playgroup">Playgroup</option>
-                  <option value="nursery">Nursery</option>
-                  <option value="rep_1">Prep 1</option>
-                  <option value="prep_2">Prep 2</option>
+                  <option value="Playgroup">Playgroup</option>
+                  <option value="Nursery">Nursery</option>
+                  <option value="Prep_1">Prep 1</option>
+                  <option value="Prep_2">Prep 2</option>
                 </select>
               </div>
               <div>

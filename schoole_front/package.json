@@ -1,5 +1,4 @@
 {
-  "homepage": "http://Dipeshghimire1997.github.io/",
   "name": "schoole_front",
   "version": "0.1.0",
   "private": true,
@@ -21,10 +20,6 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "server": "cd School_Back && npm start",
-    "dev": "concurrently \"npm start\" \"npm run server\"",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

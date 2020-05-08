@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { connect, connectAdvanced } from "react-redux";
+import { connect } from "react-redux";
 import { useForm } from "react-hook-form";
 import * as actions from "../../Store/Action";
 import back from "../../Assets/Images/undraw_directions_x53j.svg";

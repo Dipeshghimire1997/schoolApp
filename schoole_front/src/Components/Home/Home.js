@@ -1,25 +1,45 @@
 import React from "react";
-import { connect } from "react-redux";
+
 let Home = (props) => {
   return (
     <div className="homePage col">
       <div>
-        <img className="img" src={require("../../Assets/Images/c1.jpg")} />
+        <img
+          className="img"
+          src={require("../../Assets/Images/c1.jpg")}
+          alt="Image of schole"
+        />
       </div>
       <div className="home-title">Photo Gallery</div>
       <div className="basic-grid">
         <div>
-          <img className="img" src={require("../../Assets/Images/c7.jpg")} />
+          <img
+            className="img"
+            src={require("../../Assets/Images/c7.jpg")}
+            alt="Image of schole"
+          />
         </div>
         <div>
-          <img className="img" src={require("../../Assets/Images/c3.jpg")} />
+          <img
+            className="img"
+            src={require("../../Assets/Images/c3.jpg")}
+            alt="Image of schole"
+          />
         </div>
         <div>
-          <img className="img" src={require("../../Assets/Images/c5.jpg")} />
+          <img
+            className="img"
+            src={require("../../Assets/Images/c5.jpg")}
+            alt="Image of schole"
+          />
         </div>
 
         <div>
-          <img className="img" src={require("../../Assets/Images/c6.jpg")} />
+          <img
+            className="img"
+            src={require("../../Assets/Images/c6.jpg")}
+            alt="Image of schole"
+          />
         </div>
       </div>
       <div>
