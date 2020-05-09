@@ -4,7 +4,7 @@ module.exports = {
   getContacts: async (req, res) => {
     await tab.Contact.find()
       .then((result) => {
-        console.log(">>>>>", result);
+        // console.log(">>>>>", result);
         res.json({ status: 200, message: "Success", data: result });
       })
       .catch((err) => {
@@ -43,7 +43,7 @@ module.exports = {
         newContact
           .save()
           .then((result) => {
-            console.log("????????Saved info");
+            // console.log("????????Saved info");
             res.json({ status: 200, message: "Success" });
           })
           .catch((err) => {

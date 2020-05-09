@@ -11,14 +11,17 @@ let ViewTable = (props) => {
   }, [props.adminissionData]);
   return (
     <div className="col">
-      <div>The Search input div</div>
-      <div>The serarched ingo Div</div>
+      {/* <div>The Search input div</div>
+      <div>The serarched ingo Div</div> */}
       <div className="view-table">
         {adminissionData &&
           Object.values(adminissionData).map((admit, key) => (
             <div key={key} className="data-container border-all ">
               <div>
                 <label>FormDate : </label> {admit.formDate}
+              </div>
+              <div>
+                <label>Email : </label> {admit.email}
               </div>
               <div>
                 <label>Class Applied : </label> {admit.classApplied}
@@ -98,7 +101,28 @@ let ViewTable = (props) => {
               <div>
                 <label>Place : </label> {admit.place}
               </div>
-              <div></div>
+              <div className="row">
+                {!admit.accepted && (
+                  <button
+                    className="btn-submit"
+                    onClick={() =>
+                      props.acceptAdminission(admit._id, admit.email)
+                    }
+                    style={{ marginLeft: "1rem" }}
+                  >
+                    Accept
+                  </button>
+                )}
+                <button
+                  className="btn-deny"
+                  onClick={() =>
+                    props.acceptAdminission(admit._id, admit.email)
+                  }
+                  style={{ marginLeft: "2rem" }}
+                >
+                  reject
+                </button>
+              </div>
             </div>
           ))}
       </div>
@@ -113,6 +137,10 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     getAdminissionData: () => dispatch(actions.getingAdminissionData()),
+    acceptAdminission: (id, email) =>
+      dispatch(actions.acceptAdminission(id, email)),
+    rejectAdminission: (id, email) =>
+      dispatch(actions.rejectAdminission(id, email)),
   };
 };
 export default connect(mapStateToProps, mapDispatchToProps)(ViewTable);

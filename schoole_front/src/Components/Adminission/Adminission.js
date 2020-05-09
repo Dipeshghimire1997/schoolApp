@@ -6,6 +6,12 @@ import * as actions from "../../Store/Action";
 
 let Adminission = (props) => {
   const { register, handleSubmit, errors } = useForm();
+  const [message, setMessage] = useState();
+  useEffect(() => {
+    props.adminissionMessage && props.adminissionMessage === "Success"
+      ? setMessage("The application was send")
+      : setMessage("An error Occured Please try again");
+  }, [props.adminissionMessage]);
   let adminissionHandelete = (data) => {
     // console.log(data);
     props.postAdmission(data);
@@ -67,10 +73,32 @@ let Adminission = (props) => {
                 </select>
               </div>
               <div>
+                <label>Email : </label>
+                <input
+                  name="email"
+                  type="text"
+                  placeholder=" Email required the approve the student"
+                  ref={register({
+                    required: " Email is empty",
+                    pattern: {
+                      value: /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                      message: "Unvalid Email please try again",
+                    },
+                  })}
+                />
+              </div>
+            </div>
+            <div className="g-row">
+              <div>
                 {errors.classApplied && (
                   <small className="error-msg">
                     {errors.classApplied.message}
                   </small>
+                )}
+              </div>
+              <div>
+                {errors.email && (
+                  <small className="error-msg">{errors.email.message}</small>
                 )}
               </div>
             </div>
@@ -595,6 +623,7 @@ let Adminission = (props) => {
               <div>
                 <button className="btn-submit">Submit</button>
               </div>
+              {message && <small className="error-msg">{message}</small>}
             </div>
           </div>
         </div>
@@ -604,7 +633,9 @@ let Adminission = (props) => {
 };
 
 let mapStateToProps = (state) => {
-  return {};
+  return {
+    adminissionMessage: state.AdminisionReducer.message,
+  };
 };
 let mapDispatchToProps = (dispatch) => {
   return {

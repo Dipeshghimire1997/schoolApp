@@ -4,7 +4,7 @@ const getContacts = () => {
     axios
       .get("http://localhost:3003/api/v/feedback")
       .then((result) => {
-        console.log("form get");
+        // console.log("form get");
         // console.log(result.data.data);
         dispatch({ type: "GET_CONTACTS", payload: result.data.data });
       })
@@ -19,7 +19,10 @@ const postContacts = (data) => {
   return (dispatch) => {
     axios
       .post("http://localhost:3003/api/v/feedback", data)
-      .then((result) => getContacts()(dispatch))
+      .then((result) => {
+        getContacts()(dispatch);
+        dispatch({ type: "ADMINISSION_ADDED", payload: result.data.message });
+      })
       .catch((err) => {
         console.log(err);
         dispatch({ type: "ERROR_CONTACT", payload: err });

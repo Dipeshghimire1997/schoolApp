@@ -29,3 +29,13 @@ export const getingAdminissionData = () => {
       });
   };
 };
+export const acceptAdminission = (id, email) => {
+  return (dispatch) => {
+    alert(id + "," + email);
+  };
+};
+export const rejectAdminission = (id, email) => {
+  return (dispatch) => {
+    alert(id + "," + email);
+  };
+};

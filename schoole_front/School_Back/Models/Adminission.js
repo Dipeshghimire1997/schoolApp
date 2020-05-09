@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Adminission = mongoose.Schema({
   classApplied: { type: String, require: true },
+  email: { type: String, require: true },
   namePupil: { type: String, require: true },
   gender: { type: String, require: true },
   dob: { type: Date, require: true },
@@ -24,5 +25,6 @@ const Adminission = mongoose.Schema({
   anyAllergies: { type: String, require: true },
   place: { type: String, require: true },
   formDate: { type: Date, default: Date.now },
+  accepted: { type: Boolean, default: false },
 });
 module.exports = mongoose.model("Adminission", Adminission);
