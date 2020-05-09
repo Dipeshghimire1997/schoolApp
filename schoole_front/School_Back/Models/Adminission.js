@@ -25,6 +25,6 @@ const Adminission = mongoose.Schema({
   anyAllergies: { type: String, require: true },
   place: { type: String, require: true },
   formDate: { type: Date, default: Date.now },
-  accepted: { type: Boolean, default: false },
+  accepted: { type: Boolean, default: null },
 });
 module.exports = mongoose.model("Adminission", Adminission);

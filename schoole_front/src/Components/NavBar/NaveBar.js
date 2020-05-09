@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
 import { Nav, Navbar } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import * as actions from "../../Store/Action";
 let NaveBar = (props) => {
+  const history = useHistory();
   const [navLists, setNavLists] = useState([]);
   const Unvalid_Users = [
     { to: "/", link: "Home" },
@@ -42,7 +43,15 @@ let NaveBar = (props) => {
 
           {localStorage.getItem("Name") && (
             <Nav.Link>
-              <Link onClick={() => props.authLogout()}>Logout</Link>
+              <Link
+                onClick={() => {
+                  props.authLogout();
+                  history.push("/");
+                  window.location.reload();
+                }}
+              >
+                Logout
+              </Link>
             </Nav.Link>
           )}
         </Nav>

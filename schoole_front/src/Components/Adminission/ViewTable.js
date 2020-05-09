@@ -102,7 +102,7 @@ let ViewTable = (props) => {
                 <label>Place : </label> {admit.place}
               </div>
               <div className="row">
-                {!admit.accepted && (
+                {admit.accepted != true && (
                   <button
                     className="btn-submit"
                     onClick={() =>
@@ -113,15 +113,17 @@ let ViewTable = (props) => {
                     Accept
                   </button>
                 )}
-                <button
-                  className="btn-deny"
-                  onClick={() =>
-                    props.acceptAdminission(admit._id, admit.email)
-                  }
-                  style={{ marginLeft: "2rem" }}
-                >
-                  reject
-                </button>
+                {admit.accepted != false && (
+                  <button
+                    className="btn-deny"
+                    onClick={() =>
+                      props.rejectAdminission(admit._id, admit.email)
+                    }
+                    style={{ marginLeft: "2rem" }}
+                  >
+                    reject
+                  </button>
+                )}
               </div>
             </div>
           ))}

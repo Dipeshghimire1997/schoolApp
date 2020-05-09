@@ -30,12 +30,27 @@ export const getingAdminissionData = () => {
   };
 };
 export const acceptAdminission = (id, email) => {
+  let data = { id: id, email: email, type: 1 };
   return (dispatch) => {
-    alert(id + "," + email);
+    axios
+      .put("http://localhost:3003/api/v/adminission", data)
+      .then((result) => getingAdminissionData()(dispatch))
+      .catch((err) => {
+        console.log(err);
+        dispatch({ type: "ERROR_ADMINISSION", payload: err });
+      });
   };
 };
-export const rejectAdminission = (id, email) => {
+export const rejectAdminission = (id, email, accept) => {
+  let data = { id: id, email: email, type: 2 };
+
   return (dispatch) => {
-    alert(id + "," + email);
+    axios
+      .put("http://localhost:3003/api/v/adminission", data)
+      .then((result) => getingAdminissionData()(dispatch))
+      .catch((err) => {
+        console.log(err);
+        dispatch({ type: "ERROR_ADMINISSION", payload: err });
+      });
   };
 };
